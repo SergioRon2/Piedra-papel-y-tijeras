@@ -1,31 +1,29 @@
-let elecciones = ['piedra', 'papel', 'tijeras'];
+const piedraElement = document.getElementById("piedra");
+const papelElement = document.getElementById("papel");
+const tijerasElement = document.getElementById("tijeras");
 
+const resultadoElement = document.getElementById("resultado");
 
-function cpuEleccion() {
-    const randomIndex = Math.floor(Math.random() * elecciones.length);
-    return elecciones[randomIndex];
-}
+piedraElement.addEventListener("click", () => jugar("piedra"));
+papelElement.addEventListener("click", () => jugar("papel"));
+tijerasElement.addEventListener("click", () => jugar("tijeras"));
 
-function juego(eleccionJugador){
-    const cpu = cpuEleccion();
+function jugar(eleccionUsuario) {
+    const elecciones = ["piedra", "papel", "tijeras"];
+    const eleccionComputadora = elecciones[Math.floor(Math.random() * elecciones.length)];
+
     let resultado = "";
+    if (eleccionUsuario === eleccionComputadora) {
+        resultado = "Empate";
+    } else if (
+        (eleccionUsuario === "piedra" && eleccionComputadora === "tijeras") ||
+        (eleccionUsuario === "papel" && eleccionComputadora === "piedra") ||
+        (eleccionUsuario === "tijeras" && eleccionComputadora === "papel")
+    ) {
+        resultado = "Ganaste";
+    } else {
+        resultado = "Perdiste";
+    }
 
-    if(eleccionJugador === cpu){
-        resultado = 'Empataste';
-    }
-    else if((eleccionJugador == 'piedra' && cpu == 'tijera') || (eleccionJugador == 'papel' && cpu == 'piedra') || (eleccionJugador == 'tijera' && cpu == 'papel')){
-        resultado = 'Ganasteeee!!!'
-    }
-    else{
-        resultado = 'Perdiste :('
-    }
-    document.getElementById("resultado").innerHTML = `
-    Tú elegiste: ${eleccionJugador}<br>
-    La computadora eligió: ${cpu}<br>
-    Resultado: ${resultado}`;
+    resultadoElement.textContent = `Elegiste ${eleccionUsuario}. La computadora eligió ${eleccionComputadora}. Resultado: ${resultado}`;
 }
-
-
-document.getElementById("piedra").addEventListener("click", () => juego("piedra"));
-document.getElementById("papel").addEventListener("click", () => juego("papel"));
-document.getElementById("tijeras").addEventListener("click", () => juego("tijeras"));
