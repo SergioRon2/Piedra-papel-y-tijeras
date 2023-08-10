@@ -1,15 +1,50 @@
 body{
-    box-sizing: border-box;
     background-color: #cf6363;
 }
-
+.padre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.cambiar-color{
+    text-align: center;
+    font-size: 25px;
+    color: aliceblue;
+    user-select: none;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.cambiar-color select{
+    border: none;
+    width: 80px;
+    height: 30px;
+    margin: auto auto auto 20px;
+    border-radius: 15px;
+    transition: all 200ms ease-in-out;
+}
+.cambiar-color select:hover{
+    width: 90px;
+    height: 30px;
+}
+.cambiar-color select:focus{
+    width: 90px;
+}
 .contenedor{
     border: 1px solid white;
     background-color: #ffffff77;
-    height: 50rem;
+    height: 62rem;
     margin: auto;
     border-radius: 15px;
-    width: 100rem;
+    width: 40rem;
+    padding: 25px;
+}
+.contenedor-dos{
+    border: 1px solid white;
+    background-color: #ffffff77;
+    height: 62rem;
+    margin: auto;
+    border-radius: 15px;
+    width: 40rem;
     padding: 25px;
 }
 .titulo{
@@ -21,14 +56,37 @@ body{
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .elecciones{
-    margin-top: 10rem;
-    justify-content: center;
+    width: 20rem;
+    height: 20rem;
+    margin: auto;
     display: flex;
-    flex-direction: row;
-    gap: 100px;
+    flex-direction: column;
+    gap: 30px;
     cursor: pointer;
     color: black;
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+    #piedra{
+        width: 70%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #papel{
+        width: 70%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #tijeras{
+        width: 70%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
 } 
 h2{
@@ -66,7 +124,7 @@ h2{
     user-select: none;
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-
+/*
 @media ((min-width: 375px) and (max-width: 389px)) {
     body{
         background-color: #cf6363;
@@ -495,3 +553,4 @@ h2{
     }
 }
 
+*/

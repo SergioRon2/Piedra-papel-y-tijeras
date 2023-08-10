@@ -27,3 +27,20 @@ function jugar(eleccionUsuario) {
 
     resultadoElement.textContent = `Elegiste ${eleccionUsuario}. La computadora eligió ${eleccionComputadora}. Resultado: ${resultado}`;
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const colorSelect = document.getElementById('colorSelect');
+    const originalBackgroundColor = document.body.style.backgroundColor;
+
+    colorSelect.addEventListener('change', function() {
+        const selectedColor = colorSelect.value;
+
+        if (selectedColor === 'original') {
+            document.body.style.backgroundColor = originalBackgroundColor;
+        } else {
+            document.body.style.backgroundColor = selectedColor;
+        }
+    });
+    
+    colorSelect.value = 'original';
+});
